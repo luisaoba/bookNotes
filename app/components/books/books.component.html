@@ -9,3 +9,19 @@
     </li>
   </ul>
 </div>
+<mat-toolbar> All books </mat-toolbar>
+
+<mat-grid-list cols="3">
+  <mat-grid-tile *ngFor="let p of books">
+    <mat-card class="bookTile">
+      <mat-card-header>
+        <mat-card-title><h4>{{p.title}}</h4></mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="{{p.imageUrl}}" alt="{{p.title}}" style="width:40%;">
+      <mat-card-actions>
+        <button mat-button mat-raised-button class="detailsButton" [routerLink]="['/book/'+p.ISBN]" style="width:30%;"><i class="material-icons">visibility</i> Book Details </button>
+        <button mat-button mat-raised-button class="editButton" [routerLink]="['/edit-book/'+p.ISBN]" style="width:30%;"><i class="material-icons">mode-edit</i> Edit Book </button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
