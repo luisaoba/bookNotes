@@ -1,0 +1,11 @@
+<!-- Exibe TODOS os Livros -->
+<h1>Todos os Livros</h1>
+<div *ngIf="books.length > 0; else nobooks">
+  <ul *ngFor="let p of books">
+    <li>
+      ID=[{{p.id}}]<br/>
+      AUTHOR=[{{p.author}}]<br/>
+      ISBN=[{{p.ISBN}}]<br/>
+    </li>
+  </ul>
+</div>
